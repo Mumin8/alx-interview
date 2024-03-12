@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 # 0x01-lockboxes
 
-
 def canUnlockAll(boxes):
     '''
-    this checks if all the boxes can be unlocked
+    This function checks if all the boxes can be unlocked.
 
-    return:
-        True if all the boxes can be unlocked
-        False if all the boxes cannot be unlocked
+    Returns:
+        True if all the boxes can be unlocked.
+        False if all the boxes cannot be unlocked.
     '''
     n = len(boxes)
     keys = set([0])
