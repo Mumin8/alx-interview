@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-lockboxes.py that is the module 
+'''a function that will check if all boxes can be opened''' 
 
 def canUnlockAll(boxes):
     '''
