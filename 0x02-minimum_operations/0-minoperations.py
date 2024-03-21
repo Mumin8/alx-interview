@@ -1,4 +1,9 @@
-def minOperations(n):
+#!/usr/bin/python3
+
+def minOperations(n: int) -> int:
+    '''
+    this will find the minimum operation
+    '''
     if n == 1:
         return 0
 
