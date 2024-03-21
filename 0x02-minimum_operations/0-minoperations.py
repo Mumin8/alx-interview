@@ -8,7 +8,7 @@ def minOperations(n):
     this will find the minimum operation
     '''
 
-    if n == 0 or n == None:
+    if n < 2:
         return 0
 
     result = 0
