@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+'''this will perform a minimum operation'''
+
+
 def minOperations(n):
     '''
     this will find the minimum operation
