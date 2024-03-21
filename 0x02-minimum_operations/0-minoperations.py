@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     '''
     this will find the minimum operation
     '''
