@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 '''0-stats'''
 
-#!/usr/bin/env python3
-
 import sys
 
 total_size = 0
@@ -12,7 +10,8 @@ line_count = 0
 try:
     for line in sys.stdin:
         try:
-            ip, _, _, status, size = line.split()[0], line.split()[5], line.split()[6], int(line.split()[8]), int(line.split()[9])
+            ip, _, _, status, size = line.split()[0], line.split()[5], line.split()[
+                6], int(line.split()[8]), int(line.split()[9])
         except ValueError:
             continue
 
