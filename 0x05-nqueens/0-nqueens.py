@@ -2,41 +2,59 @@
 
 import sys
 
+def is_safe(board, row, col, N):
+    for i in range(col):
+        if board[row][i] == 1:
+            return False
 
-def generate_solutions(row, column):
-    solution = [[]]
-    for queen in range(row):
-        solution = place_queen(queen, column, solution)
-    return solution
+    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+        if board[i][j] == 1:
+            return False
 
+    for i, j in zip(range(row, N, 1), range(col, -1, -1)):
+        if board[i][j] == 1:
+            return False
 
-def place_queen(queen, column, prev_solution):
-    safe_position = []
-    for array in prev_solution:
-        for x in range(column):
-            if is_safe(queen, x, array):
-                safe_position.append(array + [x])
-    return safe_position
+    return True
 
+def solve_nqueens(board, col, N, solutions):
+    if col >= N:
+        sol = []
+        for i in range(N):
+            for j in range(N):
+                if board[i][j] == 1:
+                    sol.append([i, j])
+        solutions.append(sol)
+        return True
 
-def is_safe(q, x, array):
-    if x in array:
-        return (False)
-    else:
-        return all(abs(array[column] - x) != q - column
-                   for column in range(q))
+    res = False
+    for i in range(N):
+        if is_safe(board, i, col, N):
+            board[i][col] = 1
+            res = solve_nqueens(board, col + 1, N, solutions) or res
+            board[i][col] = 0
 
+    return res
 
-def init():
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    if sys.argv[1].isdigit():
-        n = int(sys.argv[1])
-    else:
+
+    try:
+        N = int(sys.argv[1])
+    except ValueError:
         print("N must be a number")
         sys.exit(1)
-    if n < 4:
+
+    if N < 4:
         print("N must be at least 4")
         sys.exit(1)
-    return (n)
+
+    board = [[0 for _ in range(N)] for _ in range(N)]
+    solutions = []
+    solve_nqueens(board, 0, N, solutions)
+
+    for sol in solutions:
+        print(sol)
+
