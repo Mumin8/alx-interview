@@ -12,7 +12,6 @@ def rotate_2d_matrix(matrix):
     mat = list(zip(*matrix[::-1]))
     for i, val in enumerate(mat):
         mat[i] = list(val)
-    
 
     for i, val in enumerate(mat):
         for j, v in enumerate(val):
