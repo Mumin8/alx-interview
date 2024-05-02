@@ -9,7 +9,7 @@ def makeChange(coins, total):
 
     c = sorted(coins)
     t = total
-    
+
     count = 0
     while t > 0:
         if t - c[-1] >= 0:
