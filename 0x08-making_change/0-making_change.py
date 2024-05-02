@@ -6,6 +6,8 @@
 def makeChange(coins, total):
     if total <= 0:
         return 0
+    if total == float('inf'):
+        return -1
 
     c = sorted(coins)
     t = total
