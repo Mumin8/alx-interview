@@ -19,6 +19,6 @@ def makeChange(coins, total):
             c.pop(-1)
         if t == 0:
             return count
-        if len(c) == 0 or t < 0:
+        if len(c) == 0:
             break
     return -1
