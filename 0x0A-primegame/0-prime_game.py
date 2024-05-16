@@ -23,7 +23,9 @@ def isWinner(x, nums):
             prime_.append(p)
 
     count = 1
+    _c = 0
     for pn in prime_:
+        _c += 1
 
         l = len(_nums)
         _nums = list(filter(lambda x: x % pn, _nums))
@@ -31,6 +33,8 @@ def isWinner(x, nums):
         if l > len(_nums):
             count += 1
             prime_.pop(0)
+        if _c == x:
+            break
 
     if count % 2 == 0:
         return "Maria"
