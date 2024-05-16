@@ -29,7 +29,7 @@ def isWinner(x, nums):
         _nums = _nums
         if l > len(_nums):
             count += 1
-            prime_.pop(0)
+            # prime_.pop(0)
         
 
     if count % 2 == 0:
