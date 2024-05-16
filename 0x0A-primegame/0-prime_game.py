@@ -30,8 +30,7 @@ def isWinner(x, nums):
         if l > len(_nums):
             count += 1
             prime_.pop(0)
-        else:
-            break
+        
 
     if count % 2 == 0:
         return "Maria"
