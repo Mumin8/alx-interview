@@ -1,42 +1,29 @@
 #!/usr/bin/python3
-
-
-'''0-prime_game'''
-
+""" 0-prime_game """
 
 def isWinner(x, nums):
-    '''isWinner function'''
-    if x is None or nums is None:
+    """determines winner"""
+    if not nums or x < 1:
         return None
-    _nums = nums
-    prime = [True for i in range(x + 1)]
-    p = 2
-    while (p * p <= x):
-        if (prime[p]):
+    max_num = max(nums)
 
-            for i in range(p * p, x + 1, p):
-                prime[i] = False
-        p += 1
-    prime_ = []
-    for p in range(2, x + 1):
-        if prime[p]:
-            prime_.append(p)
-
-    count = 1
-    _c = 0
-    for pn in prime_:
-        _c += 1
-        if _c > x:
-            break
-
-        l = len(_nums)
-        _nums = list(filter(lambda x: x % pn, _nums))
-        _nums = _nums
-        if l > len(_nums):
-            count += 1
-            prime_.pop(0)
-
-    if count % 2 == 0:
+    my_filter = [True for _ in range(max(max_num + 1, 2))]
+    for i in range(2, int(pow(max_num, 0.5)) + 1):
+        if not my_filter[i]:
+            continue
+        for j in range(i * i, max_num + 1, i):
+            my_filter[j] = False
+    my_filter[0] = my_filter[1] = False
+    y = 0
+    for i in range(len(my_filter)):
+        if my_filter[i]:
+            y += 1
+        my_filter[i] = y
+    player1 = 0
+    for x in nums:
+        player1 += my_filter[x] % 2 == 1
+    if player1 * 2 == len(nums):
+        return None
+    if player1 * 2 > len(nums):
         return "Maria"
-    elif count % 2 == 1:
-        return "Ben"
+    return "Ben"
