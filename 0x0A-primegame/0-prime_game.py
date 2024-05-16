@@ -6,7 +6,8 @@
 
 def isWinner(x, nums):
     '''isWinner function'''
-    print(nums)
+    if x is None or nums is None:
+        return None
     _nums = nums
     prime = [True for i in range(x + 1)]
     p = 2
@@ -29,7 +30,7 @@ def isWinner(x, nums):
         _nums = _nums
         if l > len(_nums):
             count += 1
-            # prime_.pop(0)
+            prime_.pop(0)
 
     if count % 2 == 0:
         return "Maria"
