@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import copy
+
 
 '''0-prime_game'''
 
@@ -7,7 +7,7 @@ import copy
 def isWinner(x, nums):
     '''isWinner function'''
     print(nums)
-    _nums = copy.deepcopy(nums)
+    _nums = nums
     prime = [True for i in range(x + 1)]
     p = 2
     while (p * p <= x):
