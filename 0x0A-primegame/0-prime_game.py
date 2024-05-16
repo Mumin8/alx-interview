@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import copy
 
 '''0-prime_game'''
@@ -22,7 +21,6 @@ def isWinner(x, nums):
         if prime[p]:
             prime_.append(p)
 
-    print(f'prime {prime_}')
     count = 1
     for pn in prime_:
 
