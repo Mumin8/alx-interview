@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+'''0-prime_game'''
+
 
 def isWinner(x, nums):
     '''isWinner function'''
